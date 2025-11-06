@@ -1,0 +1,85 @@
+{
+    "name": "cline/analyzer",
+    "description": "Configurable parallel PHP code analyzer for checking class references",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "analyzer",
+        "static-analysis",
+        "code-quality",
+        "parallel-processing",
+        "class-references"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@cline.sh"
+        }
+    ],
+    "require": {
+        "php": "^8.4.0",
+        "illuminate/support": "^12.28",
+        "laravel/prompts": "^0.3.3",
+        "nikic/php-parser": "^5.4.0",
+        "phpdocumentor/reflection-common": "^2.2",
+        "phpdocumentor/reflection-docblock": "^5.6.1",
+        "phpdocumentor/type-resolver": "^1.10.0",
+        "symfony/process": "^7.2"
+    },
+    "require-dev": {
+        "cline/php-cs-fixer": "^1.0.4",
+        "driftingly/rector-laravel": "^2.0.7",
+        "ergebnis/composer-normalize": "^2.49@dev",
+        "laravel/pint": "^1.25.1",
+        "orchestra/testbench": "^10.6",
+        "pestphp/pest": "^3.8.4",
+        "pestphp/pest-plugin-laravel": "^3.2",
+        "pestphp/pest-plugin-type-coverage": "^3.6.1",
+        "phpstan/phpstan": "^2.1.30",
+        "rector/rector": "^2.2.1",
+        "symfony/var-dumper": "^7.3.4",
+        "spatie/laravel-package-tools": "^1.92"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Cline\\Analyzer\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cline\\Analyzer\\AnalyzerServiceProvider"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true
+        },
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "lint": "vendor/bin/php-cs-fixer fix",
+        "refactor": "rector",
+        "test": [
+            "@test:lint",
+            "@test:type-coverage",
+            "@test:unit",
+            "@test:types",
+            "@test:refactor"
+        ],
+        "test:lint": "vendor/bin/php-cs-fixer check --diff",
+        "test:refactor": "rector --dry-run",
+        "test:type-coverage": "php -d memory_limit=512M vendor/bin/pest --parallel --exactly=100 --type-coverage",
+        "test:types": "phpstan --memory-limit=512M",
+        "test:unit": "pest --parallel --coverage"
+    }
+}
