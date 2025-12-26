@@ -1,0 +1,82 @@
+{
+  "name": "cline/analyzer",
+  "description": "Configurable parallel PHP code analyzer for checking class references",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "analyzer",
+    "static-analysis",
+    "code-quality",
+    "parallel-processing",
+    "class-references"
+  ],
+  "authors": [
+    {
+      "name": "Brian Faust",
+      "email": "brian@cline.sh"
+    }
+  ],
+  "require": {
+    "php": "^8.5.0",
+    "illuminate/support": "^12.28",
+    "laravel/prompts": "^0.3.8",
+    "nikic/php-parser": "^5.6.2",
+    "phpdocumentor/reflection-common": "^2.2",
+    "phpdocumentor/reflection-docblock": "^5.6.5",
+    "phpdocumentor/type-resolver": "^1.12.0",
+    "symfony/process": "^7.4.0"
+  },
+  "require-dev": {
+    "cline/coding-standard": "^1.5.7",
+    "ergebnis/composer-normalize": "^2.48.2",
+    "orchestra/testbench": "^10.8",
+    "pestphp/pest": "^4.1.6",
+    "pestphp/pest-plugin-laravel": "^4.0",
+    "pestphp/pest-plugin-type-coverage": "^4.0.3",
+    "spatie/laravel-package-tools": "^1.92.7",
+    "symfony/var-dumper": "^7.4.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Cline\\Analyzer\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "pestphp/pest-plugin": true
+    },
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Cline\\Analyzer\\AnalyzerServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "ecs check --fix",
+    "refactor": "rector",
+    "test": [
+      "@test:lint",
+      "@test:type-coverage",
+      "@test:unit",
+      "@test:types",
+      "@test:refactor"
+    ],
+    "test:lint": "ecs check",
+    "test:refactor": "rector --dry-run",
+    "test:type-coverage": "php -d memory_limit=512M vendor/bin/pest --parallel --min=90 --type-coverage",
+    "test:types": "phpstan --memory-limit=512M",
+    "test:unit": "pest --parallel --coverage"
+  }
+}
