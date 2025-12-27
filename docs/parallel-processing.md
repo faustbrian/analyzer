@@ -1,8 +1,3 @@
----
-title: Parallel Processing
-description: Configure parallel file processing for improved performance on large codebases
----
-
 ## Configuring Workers
 
 The `workers` parameter controls how many files are processed concurrently:

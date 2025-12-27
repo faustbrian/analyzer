@@ -1,8 +1,3 @@
----
-title: Examples
-description: CI/CD integration, pre-commit hooks, translation and route analysis
----
-
 ## Basic Laravel Usage
 
 ### Artisan Command

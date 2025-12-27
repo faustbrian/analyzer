@@ -1,8 +1,3 @@
----
-title: Getting Started
-description: Configurable parallel PHP code analyzer for checking class references, translation keys, and routes
----
-
 ## Installation
 
 Install via Composer:

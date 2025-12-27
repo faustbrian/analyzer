@@ -1,8 +1,3 @@
----
-title: Custom Resolvers
-description: Implement custom path, file, analysis, and reporting logic
----
-
 The analyzer provides four resolver interfaces for customization.
 
 ## PathResolver

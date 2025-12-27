@@ -1,8 +1,3 @@
----
-title: Configuration
-description: Configure paths, workers, ignore patterns, and exclude patterns
----
-
 ## Configuration File
 
 Create an `analyzer.php` configuration file:
