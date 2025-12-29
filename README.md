@@ -139,11 +139,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 ## Security
 
-If you discover any security related issues, please use the [GitHub security reporting form](https://github.com/faustbrian/analyzer/security) rather than the issue queue.
+If you discover any security related issues, please use the [GitHub security reporting form](https://git.cline.sh/faustbrian/analyzer/security) rather than the issue queue.
 
 ## Credits
 
-- [Brian Faust](https://github.com/faustbrian)
+- [Brian Faust](https://git.cline.sh/faustbrian)
 - Based on [graham-campbell/analyzer](https://github.com/GrahamCampbell/Analyzer)
 - [All Contributors](../../contributors)
 
