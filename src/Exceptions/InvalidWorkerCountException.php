@@ -9,6 +9,9 @@
 
 namespace Cline\Analyzer\Exceptions;
 
+use Facade\IgnitionContracts\BaseSolution;
+use Facade\IgnitionContracts\ProvidesSolution;
+use Facade\IgnitionContracts\Solution;
 use InvalidArgumentException;
 
 use function sprintf;
@@ -22,7 +25,7 @@ use function sprintf;
  *
  * @author Brian Faust <brian@cline.sh>
  */
-final class InvalidWorkerCountException extends InvalidArgumentException
+final class InvalidWorkerCountException extends InvalidArgumentException implements ProvidesSolution
 {
     /**
      * Create a new exception instance for invalid worker count.
@@ -36,5 +39,17 @@ final class InvalidWorkerCountException extends InvalidArgumentException
     public static function create(int $workers): self
     {
         return new self(sprintf('Workers must be at least 1, got %d.', $workers));
+    }
+
+    public function getSolution(): Solution
+    {
+        /** @var BaseSolution $solution */
+        $solution = BaseSolution::create('Review package usage and configuration.');
+
+        return $solution
+            ->setSolutionDescription('Exception: '.$this->getMessage())
+            ->setDocumentationLinks([
+                'Package documentation' => 'https://github.com/cline/analyzer',
+            ]);
     }
 }

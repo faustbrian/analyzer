@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": "^8.5.0",
+        "facade/ignition-contracts": "^1.0.2",
         "illuminate/support": "^10.0 || ^11.0 || ^12.0 || ^13.0",
         "laravel/prompts": "^0.3.13",
         "nikic/php-parser": "^5.7.0",
@@ -27,7 +28,7 @@
         "symfony/process": "^7.4.5"
     },
     "require-dev": {
-        "cline/coding-standard": "^2.0",
+        "cline/coding-standard": "^2.0.1",
         "ergebnis/composer-normalize": "^2.50.0",
         "orchestra/testbench": "^8.0 || ^9.0 || ^10.9",
         "pestphp/pest": "^4.4.1",
