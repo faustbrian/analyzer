@@ -1,10 +1,12 @@
 ## Table of Contents
 
-1. Overview (`docs/README.md`)
-2. Configuration (`docs/configuration.md`)
-3. Custom Resolvers (`docs/custom-resolvers.md`)
-4. Examples (`docs/examples.md`)
-5. Parallel Processing (`docs/parallel-processing.md`)
+1. [Overview](#doc-docs-readme) (`docs/README.md`)
+2. [Configuration](#doc-docs-configuration) (`docs/configuration.md`)
+3. [Custom Resolvers](#doc-docs-custom-resolvers) (`docs/custom-resolvers.md`)
+4. [Examples](#doc-docs-examples) (`docs/examples.md`)
+5. [Parallel Processing](#doc-docs-parallel-processing) (`docs/parallel-processing.md`)
+<a id="doc-docs-readme"></a>
+
 ## Installation
 
 Install via Composer:
@@ -131,6 +133,8 @@ Perfect for spawning multiple AI agents to fix issues in parallel.
 - **[Parallel Processing](parallel-processing)** - Configure worker count and memory usage
 - **[Custom Resolvers](custom-resolvers)** - Implement custom resolution logic
 - **[Examples](examples)** - CI/CD integration, pre-commit hooks, and more
+
+<a id="doc-docs-configuration"></a>
 
 ## Configuration File
 
@@ -318,6 +322,8 @@ $config->analysisResolver(new RouteAnalysisResolver(
 | `ignorePatterns` | Patterns to ignore |
 | `app` | Laravel application instance |
 
+<a id="doc-docs-custom-resolvers"></a>
+
 The analyzer provides four resolver interfaces for customization.
 
 ## PathResolver
@@ -501,6 +507,8 @@ $config = AnalyzerConfig::make()
     ->analysisResolver(new CustomAnalysisResolver())
     ->reporter(new JsonReporter());
 ```
+
+<a id="doc-docs-examples"></a>
 
 ## Basic Laravel Usage
 
@@ -802,6 +810,8 @@ class MyAnalyzer
     }
 }
 ```
+
+<a id="doc-docs-parallel-processing"></a>
 
 ## Configuring Workers
 
