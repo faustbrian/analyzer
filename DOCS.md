@@ -1,10 +1,10 @@
 ## Table of Contents
 
-1. [Overview](#doc-docs-readme) (`docs/README.md`)
-2. [Configuration](#doc-docs-configuration) (`docs/configuration.md`)
-3. [Custom Resolvers](#doc-docs-custom-resolvers) (`docs/custom-resolvers.md`)
-4. [Examples](#doc-docs-examples) (`docs/examples.md`)
-5. [Parallel Processing](#doc-docs-parallel-processing) (`docs/parallel-processing.md`)
+1. [Overview](#doc-docs-readme)
+2. [Configuration](#doc-docs-configuration)
+3. [Custom Resolvers](#doc-docs-custom-resolvers)
+4. [Examples](#doc-docs-examples)
+5. [Parallel Processing](#doc-docs-parallel-processing)
 <a id="doc-docs-readme"></a>
 
 ## Installation
