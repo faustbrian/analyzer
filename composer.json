@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.5.0",
         "facade/ignition-contracts": "^1.0.2",
-        "illuminate/support": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "laravel/framework": "^10.0 || ^11.0 || ^12.0 || ^13.0",
         "laravel/prompts": "^0.3.13",
         "nikic/php-parser": "^5.7.0",
         "phpdocumentor/reflection-common": "^2.2",
