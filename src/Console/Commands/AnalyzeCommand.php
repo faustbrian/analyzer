@@ -52,7 +52,6 @@ final class AnalyzeCommand extends Command
      *
      * @var string
      */
-    #[Override()]
     protected $signature = 'analyzer:analyze
                             {paths?* : Paths to analyze (files or directories)}
                             {--parallel : Force parallel processing (overrides config)}
@@ -70,7 +69,6 @@ final class AnalyzeCommand extends Command
      *
      * @var string
      */
-    #[Override()]
     protected $description = 'Analyze PHP files for missing class references, translation keys, or routes';
 
     /**
